@@ -113,4 +113,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 shape = SubResource("ConvexPolygonShape3D_ohwb5")
 
 [node name="Player" parent="." instance=ExtResource("1_lqy1p")]
-Mass = 180.0
