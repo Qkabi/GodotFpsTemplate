@@ -97,4 +97,5 @@ public override void _Ready() {
 1. Import the `project.godot` file of this repository into Godot.
 2. Run the `PlayerTest.tscn` scene under `test/Player`.
 3. The green cube is a rigidbody which the player can interact with.
+
 ![Demo](Demo.png)
