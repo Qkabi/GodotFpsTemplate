@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <!-- Extra Godot dependencies -->
-    <PackageReference Include="Godot.Extensions" Version="4.0.0-beta.10.9161" />
+    <PackageReference Include="Godot.Extensions" Version="4.0.0-beta.10.4079" />
     <PackageReference Include="GodotSharpExtras" Version="0.4.0-beta.10" />
   </ItemGroup>
 

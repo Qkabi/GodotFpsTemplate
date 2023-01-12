@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" uid="uid://bhsg4yu5e7rb6" path="res://addons/FpsTemplate/src/Environment/Environment.tscn" id="1_fsb4g"]
+[ext_resource type="Script" path="res://test/Camera/CameraTest.cs" id="1_j4p73"]
+[ext_resource type="PackedScene" uid="uid://1oskh0u63ih5" path="res://addons/FpsTemplate/src/Player/CameraController.tscn" id="2_6uc2m"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_r755g"]
+
+[node name="CameraTest" type="Node3D"]
+script = ExtResource("1_j4p73")
+
+[node name="Environment" parent="." instance=ExtResource("1_fsb4g")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4)
+mesh = SubResource("BoxMesh_r755g")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Camera" parent="Node3D" instance=ExtResource("2_6uc2m")]

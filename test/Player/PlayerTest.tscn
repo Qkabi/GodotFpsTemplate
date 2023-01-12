@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://bqrrjsq2jbip7"]
+
+[ext_resource type="PackedScene" uid="uid://bhsg4yu5e7rb6" path="res://addons/FpsTemplate/src/Environment/Environment.tscn" id="1_cn3t6"]
+[ext_resource type="PackedScene" uid="uid://cdshwv6ykjw2g" path="res://addons/FpsTemplate/src/Player/Player.tscn" id="1_lqy1p"]
+[ext_resource type="Script" path="res://test/Player/PlayerTest.cs" id="1_vc4at"]
+[ext_resource type="Material" path="res://addons/FpsTemplate/src/Environment/prototype_512x512_grey4.tres" id="3_v8kq4"]
+[ext_resource type="Material" path="res://addons/FpsTemplate/src/Environment/prototype_512x512_orange.tres" id="4_6q40u"]
+[ext_resource type="Material" path="res://addons/FpsTemplate/src/Environment/prototype_512x512_green1.tres" id="5_44mij"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2nb3d"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ohwb5"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[node name="PlayerTest" type="Node3D"]
+script = ExtResource("1_vc4at")
+
+[node name="Environment" parent="." instance=ExtResource("1_cn3t6")]
+
+[node name="Plane" type="CSGBox3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(50, 1, 50)
+
+[node name="Plane2" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.5, 4.5, 0)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(1, 10, 52)
+
+[node name="Plane3" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25, 4.5, 0)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(1, 10, 52)
+
+[node name="Plane4" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 4.5, 25.5)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(1, 10, 50)
+
+[node name="Plane5" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.5, 4.5, -25.5)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(1, 10, 50)
+
+[node name="Plane6" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, 5, 0)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(4, 1, 50)
+
+[node name="Plane7" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.5, 5, 0)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(4, 1, 50)
+
+[node name="Plane8" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 5, -23)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(4, 1, 30)
+
+[node name="Plane9" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 5, 23)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(4, 1, 30)
+
+[node name="Plane10" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(1, 0, 0, 0, 0.5, -0.866025, 0, 0.866025, 0.5, 0, 5, -20)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(4, 1, 30)
+
+[node name="Plane11" type="CSGBox3D" parent="Environment/Plane"]
+transform = Transform3D(1, 0, 0, 0, 0.5, 0.866025, 0, -0.866025, 0.5, 0, 5, 20)
+material_override = ExtResource("3_v8kq4")
+use_collision = true
+size = Vector3(4, 1, 30)
+
+[node name="Slope1" type="CSGPolygon3D" parent="Environment/Plane"]
+transform = Transform3D(-1, 0, 8.74227e-08, -3.34153e-10, 0.999993, -0.00382226, -8.74221e-08, -0.00382226, -0.999992, 21, 0.5, 20)
+polygon = PackedVector2Array(0, 0, 0, 5, 6, 0)
+depth = 5.0
+
+[node name="Slope2" type="CSGPolygon3D" parent="Environment/Plane"]
+transform = Transform3D(1, 3.34153e-10, -6.25278e-13, -3.34153e-10, 0.999993, -0.00382226, -6.75016e-13, 0.00382226, 0.999992, -20.5, 0.5, -20)
+polygon = PackedVector2Array(0, 0, 0, 5, 6, 0)
+depth = 5.0
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 0, 2)
+material_override = ExtResource("4_6q40u")
+use_collision = true
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Environment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, -4)
+mass = 20.0
+continuous_cd = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Environment/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+material_override = ExtResource("5_44mij")
+mesh = SubResource("BoxMesh_2nb3d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("ConvexPolygonShape3D_ohwb5")
+
+[node name="Player" parent="." instance=ExtResource("1_lqy1p")]
+Mass = 180.0
