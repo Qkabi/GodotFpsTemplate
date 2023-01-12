@@ -1,7 +1,4 @@
 using Godot;
-using Godot.Extensions;
-using Godot.Extensions.Input;
-using Godot.Extensions.Nodes;
 using System;
 
 namespace Qkabi.FPSTemplate;
@@ -44,7 +41,7 @@ public partial class Player : CharacterBody3D {
     public bool IsSprinting { get; private set; }
 
     public override void _Ready() {
-        _gravity = this.GetGravity3D() * GravityMultiplier;
+        _gravity = (float)ProjectSettings.GetSetting("physics/3d/default_gravity") * GravityMultiplier;
 
         _speed = NormalSpeed;
         _camera = GetNode<CameraController>("CameraController").Camera;
@@ -53,7 +50,7 @@ public partial class Player : CharacterBody3D {
 
         _impulseFactor = Mass / DEFAULT_MASS;
 
-        _tween = CreateTween().Sine();
+        _tween = CreateTween().SetTrans(Tween.TransitionType.Sine).SetEase(Tween.EaseType.InOut);
         _tween.Kill();
 
         SpeedUpdated += OnSpeedUpdated;
@@ -74,7 +71,7 @@ public partial class Player : CharacterBody3D {
     }
 
     private void UpdateSpeed(float dt) {
-        var canSprint = InputActions.Sprint.IsPressed() && _inputAxis.Length() >= 0.5f;
+        var canSprint = Input.IsActionPressed("Sprint") && _inputAxis.Length() >= 0.5f;
         var newSpeed = canSprint ? (IsOnFloor() ? SprintSpeed : _speed) : NormalSpeed;
         if (newSpeed != _speed) {
             _speed = newSpeed;
@@ -87,7 +84,7 @@ public partial class Player : CharacterBody3D {
             if (_velocity.y < 0) {
                 _velocity.y = 0;
             }
-            if (InputActions.Jump.IsJustPressed()) {
+            if (Input.IsActionJustPressed("Jump")) {
                 _velocity.y = JumpHeight;
             }
         } else {
@@ -124,7 +121,7 @@ public partial class Player : CharacterBody3D {
     private void OnSpeedUpdated(float newSpeed) {
         IsSprinting = newSpeed == SprintSpeed;
         _tween.Kill();
-        _tween = CreateTween().Sine();
-        _tween.TweenProperty(_camera, Properties.Camera3D.Fov, IsSprinting ? _sprintFov : _normalFov, FovLerpDuration);
+        _tween = CreateTween().SetTrans(Tween.TransitionType.Sine).SetEase(Tween.EaseType.InOut);
+        _tween.TweenProperty(_camera, "fov", IsSprinting ? _sprintFov : _normalFov, FovLerpDuration);
     }
 }

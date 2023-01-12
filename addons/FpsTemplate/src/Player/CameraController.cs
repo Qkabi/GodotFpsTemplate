@@ -1,5 +1,4 @@
 using Godot;
-using Godot.Sharp.Extras;
 
 namespace Qkabi.FPSTemplate;
 
@@ -12,10 +11,10 @@ public partial class CameraController : Node3D {
     private Vector2 _mouseAxis;
     private Vector3 _rotation;
 
-    [NodePath] public Camera3D Camera { get; private set; }
+    public Camera3D Camera { get; private set; }
 
     public override void _Ready() {
-        this.OnReady();
+        Camera = GetNode<Camera3D>("Camera3D");
 
         Sensitivity /= 1000;
         YLimit = Mathf.DegToRad(YLimit);
