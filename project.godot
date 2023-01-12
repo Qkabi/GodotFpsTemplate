@@ -20,7 +20,7 @@ project/assembly_name="FPSTemplate"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/PrototypeGrid/plugin.cfg")
+enabled=PackedStringArray()
 
 [input]
 

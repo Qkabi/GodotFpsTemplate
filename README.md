@@ -15,7 +15,7 @@ Make sure that:
 2. Enable the plugin by ticking the checkbox at `Project > ProjectSettings > Plugins > FpsTemplate`.
 3. Inside `project.godot` under the root of your Godot project, look for the `[input]` header and add in the following. If there isn't one, simply add an `[input]` header and then paste the following below the header.
 
-```gdresource
+```gdscript
 LookUp={
 "deadzone": 0.5,
 "events": [Object(InputEventJoypadMotion,"resource_local_to_scene":false,"resource_name":"","device":-1,"axis":3,"axis_value":-1.0,"script":null)
