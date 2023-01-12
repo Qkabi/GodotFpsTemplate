@@ -1,6 +1,6 @@
 # Godot FPS Template
 
-An FPS controller with rigidbody collision for Godot 4.0+.
+An FPS controller with rigidbody interaction for Godot 4.0+.
 
 ## Prerequisites
 
