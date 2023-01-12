@@ -18,7 +18,6 @@ public partial class Player : CharacterBody3D {
 
     [Export] public float SprintSpeed = 16;
     [Export] public float FovMultiplier = 1.1f;
-    [Export] public float FovLerpMultiplier = 4f;
     [Export] public float FovLerpDuration = 0.2f;
 
     private Vector2 _inputAxis;
