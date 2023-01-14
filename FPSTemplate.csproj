@@ -6,6 +6,11 @@
     <LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
     <NoWarn>8618</NoWarn>
+
+    <Title>Godot FPS Template</Title>
+    <Version>1.0.0</Version>
+    <Authors>Qkabi</Authors>
+    <Description>An FPS controller with rigidbody collision for Godot 4.0+.</Description>
   </PropertyGroup>
 
 </Project>
